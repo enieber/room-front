@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { Form } from "./styles";
 import { Input, Button } from "../components";
 import { translate } from "../locales";
+import { createUser } from "./service";
 
 const Register = () => {
   return (
@@ -32,8 +33,8 @@ const Register = () => {
         return errors;
       }}
       onSubmit={(values, { setSubmitting }) => {
-        // const { email, password } = values;
-        //   login(email, password, () => setSubmitting(false));
+        const { username, email, password } = values;
+        return createUser(username, email, password);
       }}
     >
       {({
@@ -46,7 +47,7 @@ const Register = () => {
         isSubmitting
         /* and other goodies */
       }) => (
-        <Form>
+        <Form action="">
           <Input
             id="username"
             label={translate("username")}

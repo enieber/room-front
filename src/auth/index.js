@@ -1,15 +1,15 @@
 import { saveToken, removeToken, getToken } from "./token";
-import api from "../config/api";
+// import api from "../config/api";
 // import axios from "axios";
 
 // const baseUrl = process.env.API_URL || "http://127.0.0.1:3333/";
 
 export const login = async (user, password, redirect) => {
   try {
-    const res = await api.post("/sessions", user, password);
-    const { token } = res;
-    saveToken(token);
-    redirect();
+    // const res = await api.post("/sessions", user, password);
+    // const { token } = res;
+    // saveToken(token);
+    // redirect();
   } catch (err) {
     redirect();
   }
