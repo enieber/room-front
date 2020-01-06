@@ -1,5 +1,5 @@
 import API from "../config/service/api";
-import ALERT from "../config/service/api";
+import ALERT from "../config/service/alertService";
 import { translate } from "../locales";
 
 export const createUser = async (username, email, password) => {

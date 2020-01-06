@@ -15,9 +15,9 @@ const error = (message, error) => {
   reportErrro(error);
 };
 
-const alert = {
+const alertService = {
   success,
   error
 };
 
-export default alert;
+export default alertService;

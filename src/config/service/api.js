@@ -3,7 +3,12 @@ import axios from "axios";
 const getBaseUrl = () => {
   return axios.create({
     baseURL: "https://room-state.herokuapp.com/api",
-    timeout: 5000
+    timeout: 10000,
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json;charset=UTF-8",
+      "Access-Control-Allow-Origin": "*"
+    }
   });
 };
 

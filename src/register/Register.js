@@ -32,7 +32,8 @@ const Register = () => {
         }
         return errors;
       }}
-      onSubmit={(values, { setSubmitting }) => {
+      onSubmit={(values, s) => {
+        // console.log(s);
         const { username, email, password } = values;
         return createUser(username, email, password);
       }}
@@ -47,7 +48,7 @@ const Register = () => {
         isSubmitting
         /* and other goodies */
       }) => (
-        <Form action="">
+        <>
           <Input
             id="username"
             label={translate("username")}
@@ -79,13 +80,18 @@ const Register = () => {
             value={values.password}
             error={errors.password && touched.password && errors.password}
           />
-          <Button outline onPress={() => {}}>
+          <Button
+            outline
+            onPress={() => {
+              handleSubmit();
+            }}
+          >
             {translate("sign_up")}
           </Button>
           <Link to="/login">
             <Button onPress={() => {}}>{translate("sign_in")}</Button>
           </Link>
-        </Form>
+        </>
       )}
     </Formik>
   );
